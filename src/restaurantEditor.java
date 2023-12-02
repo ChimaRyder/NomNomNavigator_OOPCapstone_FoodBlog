@@ -1,13 +1,18 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class restaurantEditor extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField restaurantName;
-    private JTextField textField1;
+    private JTextField LocationData;
+    private JRadioButton rb1;
+    private JRadioButton rb2;
+    private JRadioButton rb3;
+    private JRadioButton rb4;
+    private JRadioButton rb5;
+    private JTextArea TagsDisplay;
 
     public restaurantEditor() {
         setContentPane(contentPane);
@@ -19,12 +24,42 @@ public class restaurantEditor extends JDialog {
                 onOK();
             }
         });
+
+        buttonCancel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        });
+
+        // call onCancel() when cross is clicked
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                onCancel();
+            }
+        });
+
+        // call onCancel() on ESCAPE
+        contentPane.registerKeyboardAction(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onCancel();
+            }
+        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
     }
 
     private void onOK() {
+//        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), );
+        dispose();
+    }
+
+    private void onCancel() {
         // add your code here
         dispose();
     }
+
+
 
     public static void main(String[] args) {
         restaurantEditor dialog = new restaurantEditor();

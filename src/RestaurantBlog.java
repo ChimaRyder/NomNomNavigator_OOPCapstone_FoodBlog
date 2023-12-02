@@ -1,16 +1,26 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class RestaurantBlog extends JFrame{
     private JPanel mainPanel;
     private JButton addButton;
+    private JList RestaurantList;
+
+    private ArrayList<restaurant> restaurants;
+
+    public ArrayList<restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+    public void setRestaurants(ArrayList<restaurant> restaurants) {
+        this.restaurants = restaurants;
+    }
 
     public RestaurantBlog() {
 
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
-            re.setSize(300, 200);
+            re.setSize(400, 300);
             re.setVisible(true);
 
         });
