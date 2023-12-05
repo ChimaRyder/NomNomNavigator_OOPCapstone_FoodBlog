@@ -23,6 +23,8 @@ public class RestaurantBlog extends JFrame{
             re.setSize(400, 300);
             re.setVisible(true);
 
+
+            RestaurantList.setListData();
         });
     }
 
