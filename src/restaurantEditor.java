@@ -12,8 +12,9 @@ public class restaurantEditor extends JDialog {
     private JRadioButton rb3;
     private JRadioButton rb4;
     private JRadioButton rb5;
-    private JComboBox TagChooser;
-    private JTextArea TagsDisplay;
+    private JPanel mainEditor;
+    private JTabbedPane Tabs;
+    private JTextArea NotesArea;
 
     public restaurantEditor() {
         setContentPane(contentPane);
@@ -46,12 +47,7 @@ public class restaurantEditor extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-        TagChooser.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TagsDisplay.append((String) TagChooser.getSelectedItem() + " ");
-            }
-        });
+
     }
 
     private void onOK() {
