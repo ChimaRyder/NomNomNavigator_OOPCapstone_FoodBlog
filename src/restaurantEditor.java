@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class restaurantEditor extends JDialog {
     private JPanel contentPane;
@@ -15,6 +16,16 @@ public class restaurantEditor extends JDialog {
     private JPanel mainEditor;
     private JTabbedPane Tabs;
     private JTextArea NotesArea;
+    private JCheckBox fastFoodCheckBox;
+    private JCheckBox seafoodCheckBox;
+    private JCheckBox saladsCheckBox;
+    private JCheckBox pizzaCheckBox;
+    private JCheckBox burgerCheckBox;
+    private JCheckBox milkteaCheckBox;
+    private JCheckBox coffeeCheckBox;
+    private JCheckBox iceCreamCheckBox;
+    private JCheckBox cakesCheckBox;
+    private JCheckBox friesCheckBox;
 
     public restaurantEditor() {
         setContentPane(contentPane);
@@ -51,7 +62,52 @@ public class restaurantEditor extends JDialog {
     }
 
     private void onOK() {
-//        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), );
+
+        ArrayList<String> List = new ArrayList<>();
+        ArrayList<JCheckBox> Checkboxes = new ArrayList<>();
+
+        Checkboxes.add(fastFoodCheckBox);
+        Checkboxes.add(seafoodCheckBox);
+        Checkboxes.add(saladsCheckBox);
+        Checkboxes.add(pizzaCheckBox);
+        Checkboxes.add(burgerCheckBox);
+        Checkboxes.add(milkteaCheckBox);
+        Checkboxes.add(coffeeCheckBox);
+        Checkboxes.add(iceCreamCheckBox);
+        Checkboxes.add(cakesCheckBox);
+        Checkboxes.add(friesCheckBox);
+
+      for(JCheckBox c : Checkboxes){
+          if(c.isSelected()){
+             List.add( c.getText());
+          }
+      }
+
+      int rating;
+      if(rb1.isSelected()){
+          rating = 1;
+      }else if (rb2.isSelected()){
+          rating = 2;
+      } else if (rb3.isSelected()) {
+          rating = 3;
+      } else if (rb4.isSelected()) {
+          rating = 4;
+      }else {
+          rating = 5;
+      }
+
+        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), List, rating);
+        Main.getRestaurants().add(rest);
+
+        
+        String[] restaurantTitles = new String[0];
+        
+        int i = 0;
+        for (restaurant r : Main.getRestaurants()) {
+            restaurantTitles[i] = r.toString();
+        }
+        
+        Main.getInstance().RestaurantList.setListData(restaurantTitles);
         dispose();
     }
 

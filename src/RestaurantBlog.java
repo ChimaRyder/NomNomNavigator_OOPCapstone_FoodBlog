@@ -2,19 +2,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class RestaurantBlog extends JFrame{
-    private JPanel mainPanel;
+    JPanel mainPanel;
     private JButton addButton;
-    private JList RestaurantList;
-
-    private ArrayList<restaurant> restaurants;
-
-    public ArrayList<restaurant> getRestaurants() {
-        return restaurants;
-    }
-
-    public void setRestaurants(ArrayList<restaurant> restaurants) {
-        this.restaurants = restaurants;
-    }
+    public JList<String> RestaurantList;
 
     public RestaurantBlog() {
 
@@ -22,9 +12,6 @@ public class RestaurantBlog extends JFrame{
             restaurantEditor re = new restaurantEditor();
             re.setSize(400, 300);
             re.setVisible(true);
-
-
-            //RestaurantList.setListData(getRestaurants());
         });
     }
 

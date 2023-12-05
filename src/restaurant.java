@@ -59,4 +59,9 @@ public class restaurant {
 
         return stars;
     }
+
+    @Override
+    public String toString() {
+        return starRating() + " | " + getName();
+    }
 }
