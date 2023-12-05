@@ -24,7 +24,7 @@ public class RestaurantBlog extends JFrame{
             re.setVisible(true);
 
 
-            RestaurantList.setListData();
+            //RestaurantList.setListData(getRestaurants());
         });
     }
 
