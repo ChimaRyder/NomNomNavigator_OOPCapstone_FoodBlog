@@ -5,7 +5,6 @@ public class RestaurantBlog extends JFrame{
     JPanel mainPanel;
     private JButton addButton;
     private JList RestaurantList;
-
     public JList getRestaurantList() {
         return RestaurantList;
     }
@@ -16,9 +15,6 @@ public class RestaurantBlog extends JFrame{
             restaurantEditor re = new restaurantEditor();
             re.setSize(400, 300);
             re.setVisible(true);
-
-
-
         });
     }
 

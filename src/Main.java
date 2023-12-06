@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.util.ArrayList;
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Main {
