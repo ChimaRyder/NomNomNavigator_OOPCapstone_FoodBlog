@@ -1,33 +1,34 @@
+import javax.swing.*;
 import java.util.ArrayList;
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Main {
-
-    private static RestaurantBlog Restaurantblog;
-
     private static ArrayList<restaurant> restaurants;
+    private static DefaultListModel<String> Titles;
+    private static RestaurantBlog instance;
 
-    public static ArrayList<restaurant> getRestaurants() {
-
-        return restaurants;
+    public static void addRestaurant(restaurant e) {
+        restaurants.add(e);
+        Titles.addElement(e.toString());
+        getInstance().getRestaurantList().setModel(Titles);
     }
 
-    public static void setRestaurants(ArrayList<restaurant> restaurants) {
-        this.restaurants = restaurants;
+    public Main() {
+
     }
 
     public static RestaurantBlog getInstance() {
-        if (Restaurantblog == null) {
-            Restaurantblog = new RestaurantBlog();
+        if (instance == null) {
+            instance = new RestaurantBlog();
         }
 
-        return Restaurantblog;
+        return instance;
     }
-
 
     public static void main(String[] args) {
         RestaurantBlog rb = getInstance();
+        restaurants = new ArrayList<>();
+        Titles = new DefaultListModel<>();
 
         rb.setContentPane(rb.mainPanel);
         rb.setSize(500,500);

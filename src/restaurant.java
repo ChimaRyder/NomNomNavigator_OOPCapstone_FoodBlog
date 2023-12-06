@@ -50,7 +50,7 @@ public class restaurant {
         String stars = "";
 
         for (int i = 0; i < 5; i++) {
-            if (i <= getRating()) {
+            if (i < getRating()) {
                 stars = stars.concat("★");
             } else {
                 stars = stars.concat("☆");

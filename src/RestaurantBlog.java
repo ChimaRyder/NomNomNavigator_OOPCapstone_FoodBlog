@@ -4,7 +4,10 @@ import java.util.ArrayList;
 public class RestaurantBlog extends JFrame{
     JPanel mainPanel;
     private JButton addButton;
-    public JList<String> RestaurantList;
+    private JList RestaurantList;
+    public JList getRestaurantList() {
+        return RestaurantList;
+    }
 
     public RestaurantBlog() {
 

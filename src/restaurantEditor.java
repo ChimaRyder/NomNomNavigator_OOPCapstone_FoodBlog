@@ -11,8 +11,8 @@ public class restaurantEditor extends JDialog {
     private JRadioButton rb1;
     private JRadioButton rb2;
     private JRadioButton rb3;
-    private JRadioButton rb4;
     private JRadioButton rb5;
+    private JRadioButton rb4;
     private JPanel mainEditor;
     private JTabbedPane Tabs;
     private JTextArea NotesArea;
@@ -62,7 +62,6 @@ public class restaurantEditor extends JDialog {
     }
 
     private void onOK() {
-
         ArrayList<String> List = new ArrayList<>();
         ArrayList<JCheckBox> Checkboxes = new ArrayList<>();
 
@@ -82,32 +81,22 @@ public class restaurantEditor extends JDialog {
              List.add( c.getText());
           }
       }
+        int rating = 0;
 
-      int rating;
-      if(rb1.isSelected()){
-          rating = 1;
-      }else if (rb2.isSelected()){
-          rating = 2;
-      } else if (rb3.isSelected()) {
-          rating = 3;
-      } else if (rb4.isSelected()) {
-          rating = 4;
-      }else {
-          rating = 5;
-      }
+        if (rb1.isSelected()) {
+            rating = 1;
+        } else if (rb2.isSelected()) {
+            rating = 2;
+        } else if (rb3.isSelected()) {
+            rating = 3;
+        } else if (rb4.isSelected()) {
+            rating = 4;
+        } else if (rb5.isSelected()){
+            rating = 5;
+        }
 
         restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), List, rating);
-        Main.getRestaurants().add(rest);
-
-        
-        String[] restaurantTitles = new String[0];
-        
-        int i = 0;
-        for (restaurant r : Main.getRestaurants()) {
-            restaurantTitles[i] = r.toString();
-        }
-        
-        Main.getInstance().RestaurantList.setListData(restaurantTitles);
+        Main.addRestaurant(rest);
         dispose();
     }
 
