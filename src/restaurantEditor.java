@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class restaurantEditor extends JDialog {
     private JPanel contentPane;
@@ -10,8 +11,8 @@ public class restaurantEditor extends JDialog {
     private JRadioButton rb1;
     private JRadioButton rb2;
     private JRadioButton rb3;
-    private JRadioButton rb4;
     private JRadioButton rb5;
+    private JRadioButton rb4;
     private JPanel mainEditor;
     private JTabbedPane Tabs;
     private JTextArea NotesArea;
@@ -51,7 +52,24 @@ public class restaurantEditor extends JDialog {
     }
 
     private void onOK() {
-//        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), );
+        ArrayList<String> test = new ArrayList<>();
+
+        int rating = 0;
+
+        if (rb1.isSelected()) {
+            rating = 1;
+        } else if (rb2.isSelected()) {
+            rating = 2;
+        } else if (rb3.isSelected()) {
+            rating = 3;
+        } else if (rb4.isSelected()) {
+            rating = 4;
+        } else if (rb5.isSelected()){
+            rating = 5;
+        }
+
+        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), test, rating);
+        Main.addRestaurant(rest);
         dispose();
     }
 
