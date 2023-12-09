@@ -1,10 +1,14 @@
 import javax.swing.*;
-import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RestaurantBlog extends JFrame{
     JPanel mainPanel;
     private JButton addButton;
     private JList RestaurantList;
+    private JButton saveListButton;
+    private JButton loadListButton;
+
     public JList getRestaurantList() {
         return RestaurantList;
     }
@@ -15,6 +19,18 @@ public class RestaurantBlog extends JFrame{
             restaurantEditor re = new restaurantEditor();
             re.setSize(400, 300);
             re.setVisible(true);
+        });
+        saveListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.saveDataToFile();
+            }
+        });
+        loadListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.loadDataToFile();
+            }
         });
     }
 

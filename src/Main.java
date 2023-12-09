@@ -1,5 +1,7 @@
 import javax.swing.*;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
@@ -51,7 +53,7 @@ public class Main {
         return searchList;
     }
 
-    public static void main(String[] args) {
+    public static void loadDataToFile() {
         ArrayList<String> database = new ArrayList<>();
         /*
         To do list:
@@ -63,9 +65,9 @@ public class Main {
 
 
         //Tig get data from file
-        /*try {
+        try {
             String line;
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("src/Database/RestaurantList.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\Database\\RestaurantList.txt"));
             while((line = bufferedReader.readLine()) != null){
                 database.add(line);
             }
@@ -84,7 +86,44 @@ public class Main {
                 Collections.addAll(labelsLabel, labels);
                 restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
             }
-        }*/
+        }
+
+        //update listModel for JList to show the restaurants in file
+        for (restaurant r: restaurants) {
+            Titles.addElement(r.toString());
+            getInstance().getRestaurantList().setModel(Titles);
+        }
+    }
+
+    public static void saveDataToFile() {
+        //Tig write into file
+        try {
+            BufferedWriter bufferedWriter = null;
+            try {
+                bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"));
+                for (restaurant r : restaurants) {
+                    StringBuilder store = new StringBuilder();
+                    store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
+                            .append("|");
+                    for (String labels : r.getCuisineTags()) {
+                        store.append(labels).append(" ");
+                    }
+                    bufferedWriter.write(store + "\n");
+                }
+            } catch (IOException e) {
+                System.err.println("Error occurred when writing to file");
+                e.printStackTrace();
+            } finally {
+                bufferedWriter.close();
+            }
+        } catch (IOException e) {
+            System.err.println("Error occurred when saving to file");
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+
         RestaurantBlog rb = getInstance();
         restaurants = new ArrayList<>();
         Titles = new DefaultListModel<>();
@@ -94,21 +133,7 @@ public class Main {
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
         rb.setTitle("Restaurant Blog");
-        //Tig write into file
-        /*try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Database/RestaurantList.txt"));
-            for(restaurant r: restaurants){
-                StringBuilder store = new StringBuilder();
-                store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
-                        .append("|");
-                for(String labels: r.getCuisineTags()){
-                    store.append(labels).append(" ");
-                }
-                bufferedWriter.write(store + "\n");
-            }
-        }catch (IOException e){
-            System.err.println("Error occurred when writing to file");
-        }*/
+
 
     }
 }
