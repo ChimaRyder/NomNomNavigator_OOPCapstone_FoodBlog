@@ -40,19 +40,29 @@ public class Main {
 
         return instance;
     }
-    public static ArrayList<restaurant> getSearchList(String searchFromUser){
+    public static ArrayList<restaurant> searchCuisineTags(String searchFromUser){
         //List with restaurants that contain user search pero wala paniii na add sa form kanang search engine basta kana
         ArrayList<restaurant> searchList = new ArrayList<>();
-        for (restaurant r : restaurants) {
-            for (String cuisineTagsList : r.getCuisineTags()) {
-                if (Objects.equals(searchFromUser, cuisineTagsList)) {
+        for (restaurant r : restaurants)
+            for (String cuisineTagsList : r.getCuisineTags())
+                if (Objects.equals(searchFromUser, cuisineTagsList))
                     searchList.add(r);
-                }
-            }
-        }
         return searchList;
     }
-
+    public static ArrayList<restaurant> searchMinimumRatings(int rating){
+        ArrayList<restaurant> searchlist = new ArrayList<>();
+        for(restaurant r: restaurants)
+            if(r.getRating() >= rating)
+                searchlist.add(r);
+        return searchlist;
+    }
+    public static ArrayList<restaurant> searchExactRatings(int rating){
+        ArrayList<restaurant> searchlist = new ArrayList<>();
+        for(restaurant r : restaurants)
+            if(r.getRating() == rating)
+                searchlist.add(r);
+        return searchlist;
+    }
     public static void loadDataToFile() {
         ArrayList<String> database = new ArrayList<>();
         /*
@@ -112,13 +122,14 @@ public class Main {
                 }
             } catch (IOException e) {
                 System.err.println("Error occurred when writing to file");
-                e.printStackTrace();
+                e.getMessage();
             } finally {
+                assert bufferedWriter != null : "Buffered Writer is Null";
                 bufferedWriter.close();
             }
         } catch (IOException e) {
             System.err.println("Error occurred when saving to file");
-            e.printStackTrace();
+            e.getMessage();
         }
     }
 
