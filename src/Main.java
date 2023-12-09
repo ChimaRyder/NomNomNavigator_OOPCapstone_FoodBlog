@@ -93,15 +93,19 @@ public class Main {
             for(String s: database){
                 String[] infos = s.split("\\|");
                 String[] labels = infos[3].split(" ");
+                for(int a = 0; a < labels.length; a++)
+                    labels[a] = labels[a].replaceAll("-", " ");
                 Collections.addAll(labelsLabel, labels);
                 restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
             }
         }
 
         //update listModel for JList to show the restaurants in file
-        for (restaurant r: restaurants) {
-            Titles.addElement(r.toString());
-            getInstance().getRestaurantList().setModel(Titles);
+        if(restaurants != null){
+            for (restaurant r : restaurants) {
+                Titles.addElement(r.toString());
+                getInstance().getRestaurantList().setModel(Titles);
+            }
         }
     }
 
@@ -116,7 +120,8 @@ public class Main {
                     store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
                             .append("|");
                     for (String labels : r.getCuisineTags()) {
-                        store.append(labels).append(" ");
+                        String splitter = labels.replaceAll(" ", "-");
+                        store.append(splitter).append(" ");
                     }
                     bufferedWriter.write(store + "\n");
                 }
