@@ -127,14 +127,14 @@ public class Main {
                 }
             } catch (IOException e) {
                 System.err.println("Error occurred when writing to file");
-                e.getMessage();
+                e.printStackTrace();
             } finally {
                 assert bufferedWriter != null : "Buffered Writer is Null";
                 bufferedWriter.close();
             }
         } catch (IOException e) {
             System.err.println("Error occurred when saving to file");
-            e.getMessage();
+            e.printStackTrace();
         }
     }
 
