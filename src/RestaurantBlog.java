@@ -8,7 +8,6 @@ public class RestaurantBlog extends JFrame{
     private JList RestaurantList;
     private JButton saveListButton;
     private JButton loadListButton;
-    private boolean dataLoaded = false;
 
     public JList getRestaurantList() {
         return RestaurantList;
@@ -21,16 +20,17 @@ public class RestaurantBlog extends JFrame{
             re.setSize(400, 300);
             re.setVisible(true);
         });
-        saveListButton.addActionListener(e -> {
-            if(!dataLoaded) {
-                Main.loadDataToFile();
-                dataLoaded = true;
+        saveListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.saveDataToFile();
             }
-            Main.saveDataToFile();
         });
-        loadListButton.addActionListener(e -> {
-            Main.loadDataToFile();
-            dataLoaded = true;
+        loadListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.loadDataToFile();
+            }
         });
     }
 
