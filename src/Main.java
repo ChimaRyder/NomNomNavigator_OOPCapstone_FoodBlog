@@ -111,30 +111,25 @@ public class Main {
 
     public static void saveDataToFile() throws IOException {
         //Tig write into file
+        BufferedWriter bufferedWriter = null;
         try {
-            BufferedWriter bufferedWriter = null;
-            try {
-                bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"));
-                for (restaurant r : restaurants) {
-                    StringBuilder store = new StringBuilder();
-                    store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
-                            .append("|");
-                    for (String labels : r.getCuisineTags()) {
-                        String splitter = labels.replaceAll(" ", "-");
-                        store.append(splitter).append(" ");
-                    }
-                    bufferedWriter.write(store + "\n");
+            bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt", false));
+            for (restaurant r : restaurants) {
+                StringBuilder store = new StringBuilder();
+                store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
+                        .append("|");
+                for (String labels : r.getCuisineTags()) {
+                    String splitter = labels.replaceAll(" ", "-");
+                    store.append(splitter).append(" ");
                 }
-            } catch (IOException e) {
-                System.err.println("Error occurred when writing to file");
-                e.printStackTrace();
-            } finally {
-                assert bufferedWriter != null : "Buffered Writer is Null";
-                bufferedWriter.close();
+                bufferedWriter.write(store + "\n");
             }
         } catch (IOException e) {
             System.err.println("Error occurred when saving to file");
             e.printStackTrace();
+        }finally {
+            assert bufferedWriter != null : "Buffered Writer is Null";
+            bufferedWriter.close();
         }
     }
 
