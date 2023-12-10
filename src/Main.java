@@ -94,7 +94,7 @@ public class Main {
                 String[] infos = s.split("\\|");
                 String[] labels = infos[3].split(" ");
                 for(int a = 0; a < labels.length; a++)
-                labels[a] = labels[a].replaceAll("-", " ");
+                    labels[a] = labels[a].replaceAll("-", " ");
                 Collections.addAll(labelsLabel, labels);
                 restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
             }
