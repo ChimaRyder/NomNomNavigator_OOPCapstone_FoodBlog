@@ -111,25 +111,31 @@ public class Main {
 
     public static void saveDataToFile() throws IOException {
         //Tig write into file
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"))) {
-            for (restaurant r : restaurants) {
-                StringBuilder store = new StringBuilder();
-                store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
-                        .append("|");
-                for (String labels : r.getCuisineTags()) {
-                    String splitter = labels.replaceAll(" ", "-");
-                    store.append(splitter).append(" ");
+        try {
+            BufferedWriter bufferedWriter = null;
+            try {
+                bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"));
+                for (restaurant r : restaurants) {
+                    StringBuilder store = new StringBuilder();
+                    store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
+                            .append("|");
+                    for (String labels : r.getCuisineTags()) {
+                        String splitter = labels.replaceAll(" ", "-");
+                        store.append(splitter).append(" ");
+                    }
+                    bufferedWriter.write(store + "\n");
                 }
-
-                bufferedWriter.write(store + "\n");
+            } catch (IOException e) {
+                System.err.println("Error occurred when writing to file");
+                e.printStackTrace();
+            } finally {
+                assert bufferedWriter != null : "Buffered Writer is Null";
+                bufferedWriter.close();
             }
         } catch (IOException e) {
             System.err.println("Error occurred when saving to file");
             e.printStackTrace();
-        } finally {
-            assert false : "BufferedWriter is null";
         }
-
     }
 
     public static void main(String[] args) {
