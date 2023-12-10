@@ -32,7 +32,7 @@ public class Main {
     public Main() {
 
     }
-
+    //singleton pattern here
     public static RestaurantBlog getInstance() {
         if (instance == null) {
             instance = new RestaurantBlog();
@@ -40,6 +40,7 @@ public class Main {
 
         return instance;
     }
+    //for searching...
     public static ArrayList<restaurant> searchCuisineTags(String searchFromUser){
         //List with restaurants that contain user search pero wala paniii na add sa form kanang search engine basta kana
         ArrayList<restaurant> searchList = new ArrayList<>();
@@ -67,8 +68,8 @@ public class Main {
         ArrayList<String> database = new ArrayList<>();
         /*
         To do list:
-        -Implement get data into file button then display it into gui
-        -Implement save into file button to save the lists of restaurants and use that list again in the future
+        -Implement get data into file button then display it into gui: done
+        -Implement save into file button to save the lists of restaurants and use that list again in the future : goods
         Take note to take advantage of the code implemented in main
         --If naay error, posts errors in github to get resolved
          */
