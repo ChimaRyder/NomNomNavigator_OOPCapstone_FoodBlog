@@ -38,39 +38,37 @@ public class restaurantEditor extends JDialog {
         LocationErrorLabel.setVisible(false);
         RatingErrorLabel.setVisible(false);
 
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                boolean restaurantConfirmed = false;
+        buttonOK.addActionListener(e -> {
+            boolean restaurantConfirmed = false;
 
-                try {
-                    if (restaurantName.getText().isBlank()){
-                        NameErrorLabel.setVisible(true);
-                        throw new IllegalArgumentException("Error: Restaurant must have a name.");
-                    }
-                    NameErrorLabel.setVisible(false);
-
-                    if (LocationData.getText().isBlank()){
-                        LocationErrorLabel.setVisible(true);
-                        throw new IllegalArgumentException("Error: Restaurant must have a location.");
-                    }
-                    LocationErrorLabel.setVisible(false);
-
-                    if (!rb1.isSelected() && !rb2.isSelected() && !rb3.isSelected() && !rb4.isSelected() && !rb5.isSelected()){
-                        RatingErrorLabel.setVisible(true);
-                        throw new IllegalArgumentException("Error: Restaurant must have a location.");
-                    }
-                    RatingErrorLabel.setVisible(false);
-
-                    restaurantConfirmed = true;
-                } catch (IllegalArgumentException iae) {
-                    buttonOK.setToolTipText(iae.getMessage());
+            try {
+                if (restaurantName.getText().isBlank()){
+                    NameErrorLabel.setVisible(true);
+                    throw new IllegalArgumentException("Error: Restaurant must have a name.");
                 }
+                NameErrorLabel.setVisible(false);
 
-
-                if (restaurantConfirmed == true)
-                {
-                    onOK();
+                if (LocationData.getText().isBlank()){
+                    LocationErrorLabel.setVisible(true);
+                    throw new IllegalArgumentException("Error: Restaurant must have a location.");
                 }
+                LocationErrorLabel.setVisible(false);
+
+                if (!rb1.isSelected() && !rb2.isSelected() && !rb3.isSelected() && !rb4.isSelected() && !rb5.isSelected()){
+                    RatingErrorLabel.setVisible(true);
+                    throw new IllegalArgumentException("Error: Restaurant must have a location.");
+                }
+                RatingErrorLabel.setVisible(false);
+
+                restaurantConfirmed = true;
+            } catch (IllegalArgumentException iae) {
+                buttonOK.setToolTipText(iae.getMessage());
+            }
+
+
+            if (restaurantConfirmed == true)
+            {
+                onOK();
             }
         });
 

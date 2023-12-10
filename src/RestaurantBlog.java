@@ -23,15 +23,11 @@ public class RestaurantBlog extends JFrame{
             re.setVisible(true);
         });
         saveListButton.addActionListener(e -> {
-            if(!dataLoaded) {
-                try {
+            try{
+                if (!dataLoaded) {
                     Main.loadDataToFile();
-                } catch (IOException ie) {
-                    ie.printStackTrace();
+                    dataLoaded = true;
                 }
-                dataLoaded = true;
-            }
-            try {
                 Main.saveDataToFile();
             } catch (IOException ie) {
                 ie.printStackTrace();
@@ -39,11 +35,13 @@ public class RestaurantBlog extends JFrame{
         });
         loadListButton.addActionListener(e -> {
             try {
-                Main.loadDataToFile();
+                if(!dataLoaded){
+                    Main.loadDataToFile();
+                    dataLoaded = true;
+                }
             } catch (IOException ie) {
                 ie.printStackTrace();
             }
-            dataLoaded = true;
         });
     }
 
