@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
@@ -63,7 +66,7 @@ public class Main {
                 searchlist.add(r);
         return searchlist;
     }
-    public static void loadDataToFile() {
+    public static void loadDataToFile() throws IOException {
         ArrayList<String> database = new ArrayList<>();
         /*
         To do list:
@@ -72,10 +75,25 @@ public class Main {
         Take note to take advantage of the code implemented in main
         --If naay error, posts errors in github to get resolved
          */
+        URL url = new URL("http://hyeumine.com/DL0wgqiJ/Acabal/helper/getRestaurantList.php");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setDoOutput(true);
+        String data = "method=true";
+        byte[] postData =  data.getBytes(StandardCharsets.UTF_8);
+        connection.setRequestProperty("Content-Length", String.valueOf(postData.length));
+        try(OutputStream outputStream = connection.getOutputStream()) {
+            outputStream.write(postData);
+        }
 
-
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+            String line;
+            while((line = reader.readLine()) != null){
+                database.add(line);
+            }
+        }
         //Tig get data from file
-        try {
+       /* try {
             String line;
             BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\Database\\RestaurantList.txt"));
             while((line = bufferedReader.readLine()) != null){
@@ -87,49 +105,46 @@ public class Main {
             return;
         } catch (IOException e) {
             System.err.println("Error occurred when reading the file");
-        }
+        }*/
         if(!database.isEmpty()){
             ArrayList<String> labelsLabel = new ArrayList<>();
             for(String s: database){
                 String[] infos = s.split("\\|");
                 String[] labels = infos[3].split(" ");
+                for(int a = 0; a < labels.length; a++)
+                    labels[a] = labels[a].replaceAll("-", " ");
                 Collections.addAll(labelsLabel, labels);
                 restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
             }
         }
 
         //update listModel for JList to show the restaurants in file
-        for (restaurant r: restaurants) {
-            Titles.addElement(r.toString());
-            getInstance().getRestaurantList().setModel(Titles);
+        if(restaurants != null){
+            for (restaurant r : restaurants) {
+                Titles.addElement(r.toString());
+                getInstance().getRestaurantList().setModel(Titles);
+            }
         }
     }
 
-    public static void saveDataToFile() {
+    public static void saveDataToFile() throws IOException {
         //Tig write into file
-        try {
-            BufferedWriter bufferedWriter = null;
-            try {
-                bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"));
-                for (restaurant r : restaurants) {
-                    StringBuilder store = new StringBuilder();
-                    store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
-                            .append("|");
-                    for (String labels : r.getCuisineTags()) {
-                        store.append(labels).append(" ");
-                    }
-                    bufferedWriter.write(store + "\n");
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt"))) {
+            for (restaurant r : restaurants) {
+                StringBuilder store = new StringBuilder();
+                store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
+                        .append("|");
+                for (String labels : r.getCuisineTags()) {
+                    String splitter = labels.replaceAll(" ", "-");
+                    store.append(splitter).append(" ");
                 }
-            } catch (IOException e) {
-                System.err.println("Error occurred when writing to file");
-                e.getMessage();
-            } finally {
-                assert bufferedWriter != null : "Buffered Writer is Null";
-                bufferedWriter.close();
+                bufferedWriter.write(store + "\n");
             }
         } catch (IOException e) {
             System.err.println("Error occurred when saving to file");
-            e.getMessage();
+            e.printStackTrace();
+        } finally {
+            assert false : "BufferedWriter is null";
         }
     }
 
