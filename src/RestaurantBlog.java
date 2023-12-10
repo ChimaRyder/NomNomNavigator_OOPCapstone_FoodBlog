@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class RestaurantBlog extends JFrame{
     JPanel mainPanel;
@@ -8,6 +9,7 @@ public class RestaurantBlog extends JFrame{
     private JList RestaurantList;
     private JButton saveListButton;
     private JButton loadListButton;
+    private boolean dataLoaded = false;
 
     public JList getRestaurantList() {
         return RestaurantList;
@@ -20,17 +22,28 @@ public class RestaurantBlog extends JFrame{
             re.setSize(400, 300);
             re.setVisible(true);
         });
-        saveListButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        saveListButton.addActionListener(e -> {
+            if(!dataLoaded) {
+                try {
+                    Main.loadDataToFile();
+                } catch (IOException ie) {
+                    ie.printStackTrace();
+                }
+                dataLoaded = true;
+            }
+            try {
                 Main.saveDataToFile();
+            } catch (IOException ie) {
+                ie.printStackTrace();
             }
         });
-        loadListButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        loadListButton.addActionListener(e -> {
+            try {
                 Main.loadDataToFile();
+            } catch (IOException ie) {
+                ie.printStackTrace();
             }
+            dataLoaded = true;
         });
     }
 
