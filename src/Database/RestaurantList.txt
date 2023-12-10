@@ -1,1 +1,36 @@
+Alberto's Pizza|Punta Princesa|5|Fast-Food Pizza 
 Sbarro's|SM Seaside|4|Fast-Food Pizza 
+Pizza Hut|SM Seaside|4|Fast-Food Pizza 
+Greenwich|Raintree|4|Fast-Food Pizza 
+S&R New York Style Pizza|Ayala Center|4|Fast-Food Pizza 
+Angel's Pizza|V Rama|4|Fast-Food Pizza 
+808 Pizza Station|Osmeña Boulevard|3|Fast-Food Pizza 
+Calda Pizza|Mango Avenue|4|Fast-Food Pizza 
+Biaños Pizza|Basak|2|Fast-Food Pizza 
+Popcha Milktea Station|Shell Tisa|4|Milktea 
+Golden Sugar|Capitol Site|3|Milktea 
+Quickly|SM Seaside|4|Milktea 
+Vasso |Tisa|4|Milktea 
+Sebu Cha Cafe|F Llama Street|3|Milktea 
+Tamp Cafe & Co.|R Arcenas Street|4|Milktea 
+Lolli Milktea & Candy|Tisa|3|Milktea 
+Chatime|IT Park|4|Milktea 
+Burger King|SM Seaside|5|Burger Coffee Fries 
+Army Navy|IT Park|4|Fast-Food Burger Coffee Fries 
+Zark's Burgers|Ayala Cebu|4|Fast-Food Burger Fries 
+Big Daddy|Il Corso|4|Fast-Food Burger Fries 
+Bang Bang Special Crispy Bangus|Labangon|4|Seafood 
+Kusina Ni Nasing|Guadalupe|4|Seafood 
+I Love Bucket Shrimps|Tisa|4|Seafood 
+Urbanica Milk Coffee|Capitol |4|Coffee 
+Starbucks|Ayala Central Bloc|5|Coffee 
+Bo's Coffee|Banawa|4|Coffee 
+Red Ribbon|Gaisano Tisa|4|Cakes 
+Goldilocks |Robinsons Fuente|4|Cakes 
+Dairy Queen|SM City Cebu|5|Ice-Cream Cakes 
+Purple Yam Cebu|Punta Princesa|4|Cakes 
+Soy & Bean |Sanciangko Street|4|Ice-Cream 
+Gelatissimo|Ayala Center|5|Ice-Cream Cakes 
+Dessert Factory|Parkmall|4|Ice-Cream Cakes 
+Moonsky & Sunny |Guadalupe|5|Ice-Cream 
+Selecta Ice Cream|Capitol Site|4|Ice-Cream 

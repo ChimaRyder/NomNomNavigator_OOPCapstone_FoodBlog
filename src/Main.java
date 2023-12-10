@@ -140,7 +140,7 @@ public class Main {
         Titles = new DefaultListModel<>();
 
         rb.setContentPane(rb.mainPanel);
-        rb.setSize(500,500);
+        rb.setSize(500,1000);
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
         rb.setTitle("Restaurant Blog");
