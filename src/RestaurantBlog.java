@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -42,6 +44,28 @@ public class RestaurantBlog extends JFrame{
             } catch (IOException ie) {
                 ie.printStackTrace();
             }
+            dataLoaded = true;
+        });
+        RestaurantList.addListSelectionListener(e -> {
+            restaurant r = null;
+            for (restaurant res : Main.getRestaurants()) {
+                if (res.toString().equals(RestaurantList.getSelectedValue())) {
+                    r = res;
+                }
+            }
+
+            RestaurantViewer rv = new RestaurantViewer();
+
+            rv.getRestaurantName().setText(r.getName());
+            rv.getLocationData().setText(r.getLocation());
+            rv.getRating().setText(r.starRating());
+
+            for (String s : r.getCuisineTags()) {
+                rv.getNotesArea().append(s + " ");
+            }
+
+            rv.setSize(400, 300);
+            rv.setVisible(true);
         });
     }
 

@@ -1,1 +1,1 @@
-{RestaurantName} | {Location} | {Rating} | {Notes}
+{RestaurantName} | {Location} | {Rating} | {Tag}

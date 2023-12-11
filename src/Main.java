@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,6 +24,10 @@ public class Main {
     private static ArrayList<restaurant> restaurants;
     private static DefaultListModel<String> Titles;
     private static RestaurantBlog instance;
+
+    public static ArrayList<restaurant> getRestaurants() {
+        return restaurants;
+    }
 
     public static void addRestaurant(restaurant e) {
         restaurants.add(e);
@@ -74,63 +80,117 @@ public class Main {
         --If naay error, posts errors in github to get resolved
          */
 
+        //get file from JFileChooser
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(new FileNameExtensionFilter( "*.txt", "txt"));
+        fileChooser.setCurrentDirectory(new File("src\\Database"));
+        int res = fileChooser.showOpenDialog(null); //selects location where to write file
 
-        //Tig get data from file
-        try {
-            String line;
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\Database\\RestaurantList.txt"));
-            while((line = bufferedReader.readLine()) != null){
-                database.add(line);
-            }
-            bufferedReader.close();
-        }catch (FileNotFoundException e){
-            System.err.println("Restaurant List file not found");
-            return;
-        } catch (IOException e) {
-            System.err.println("Error occurred when reading the file");
-        }
-        if(!database.isEmpty()){
-            ArrayList<String> labelsLabel = new ArrayList<>();
-            for(String s: database){
-                String[] infos = s.split("\\|");
-                String[] labels = infos[3].split(" ");
-                for(int a = 0; a < labels.length; a++)
-                    labels[a] = labels[a].replaceAll("-", " ");
-                Collections.addAll(labelsLabel, labels);
-                restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
-            }
+        File file = null;
+        if (res == JFileChooser.APPROVE_OPTION) {
+            file = new File(fileChooser.getSelectedFile().getAbsolutePath());
         }
 
-        //update listModel for JList to show the restaurants in file
-        if(restaurants != null) {
-            for (restaurant r : restaurants) {
-                Titles.addElement(r.toString());
-                getInstance().getRestaurantList().setModel(Titles);
+        //check if file exists
+        if (file != null) {
+            //Tig get data from file
+            try {
+                String line;
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+                while ((line = bufferedReader.readLine()) != null) {
+                    database.add(line);
+                }
+                bufferedReader.close();
+            } catch (FileNotFoundException e) {
+                System.err.println("Restaurant List file not found");
+                return;
+            } catch (IOException e) {
+                System.err.println("Error occurred when reading the file");
             }
+            if (!database.isEmpty()) {
+
+                for (String s : database) {
+                    ArrayList<String> labelsLabel = new ArrayList<>();
+                    String[] infos = s.split("\\|");
+                    String[] labels = infos[3].split(" ");
+                    for (int a = 0; a < labels.length; a++)
+                        labels[a] = labels[a].replaceAll("-", " ");
+                    Collections.addAll(labelsLabel, labels);
+                    restaurants.add(new restaurant(infos[0], infos[1], labelsLabel, Integer.parseInt(infos[2])));
+                }
+            }
+
+            //update listModel for JList to show the restaurants in file
+            if (restaurants != null) {
+                for (restaurant r : restaurants) {
+                    Titles.addElement(r.toString());
+                    getInstance().getRestaurantList().setModel(Titles);
+                }
+            }
+        } else {
+            throw new FileNotFoundException("File does not exist.");
         }
     }
 
     public static void saveDataToFile() throws IOException {
-        //Tig write into file
-        BufferedWriter bufferedWriter = null;
-        try {
-            bufferedWriter = new BufferedWriter(new FileWriter("src\\Database\\RestaurantList.txt", false));
-            for (restaurant r : restaurants) {
-                StringBuilder store = new StringBuilder();
-                store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
-                        .append("|");
-                for (String labels : r.getCuisineTags()) {
-                    String splitter = labels.replaceAll(" ", "-");
-                    store.append(splitter).append(" ");
+        //choose where to save file to
+        JFileChooser fileChooser = new JFileChooser() {
+            @Override //Overriding approveSelection to avoid overwriting to file accidentally
+            public void approveSelection() {
+                File f = getSelectedFile();
+                if (f.exists() && getDialogType() == SAVE_DIALOG) {
+                    switch (JOptionPane.showConfirmDialog(this, "File already exists. Would you like to overwrite it?", "Overwrite Existing File", JOptionPane.YES_NO_CANCEL_OPTION)) {
+                        case JOptionPane.YES_OPTION:
+                            super.approveSelection();
+                            return;
+                        case JOptionPane.NO_OPTION, JOptionPane.CLOSED_OPTION:
+                            return;
+                        case JOptionPane.CANCEL_OPTION:
+                            cancelSelection();
+                            return;
+                    }
                 }
-                bufferedWriter.write(store + "\n");
+                super.approveSelection();
             }
-        } catch (IOException e) {
-            System.err.println("Error occurred when saving to file");
-            e.printStackTrace();
-        }finally {
-            assert bufferedWriter != null : "Buffered Writer is Null";
-            bufferedWriter.close();
+        };
+
+        fileChooser.setFileFilter(new FileNameExtensionFilter( "*.txt", "txt"));
+        fileChooser.setCurrentDirectory(new File("src\\Database"));
+        int res = fileChooser.showSaveDialog(null); //selects location where to write file
+
+        File file = null;
+        if (res == JFileChooser.APPROVE_OPTION) {
+            file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+            if (!file.toString().endsWith(".txt")) {
+                file = new File(file.toString() + ".txt");
+            }
+        }
+
+        //checking if file exists or not. Will not continue if it doesn't exist
+        if (file != null) {
+            //Tig write into file
+            BufferedWriter bufferedWriter = null;
+            try {
+                bufferedWriter = new BufferedWriter(new FileWriter(file, false));
+                for (restaurant r : restaurants) {
+                    StringBuilder store = new StringBuilder();
+                    store.append(r.getName()).append("|").append(r.getLocation()).append("|").append(r.getRating())
+                            .append("|");
+                    for (String labels : r.getCuisineTags()) {
+                        String splitter = labels.replaceAll(" ", "-");
+                        store.append(splitter).append(" ");
+                    }
+                    bufferedWriter.write(store + "\n");
+                }
+            } catch (IOException e) {
+                System.err.println("Error occurred when saving to file");
+                e.printStackTrace();
+            } finally {
+                assert bufferedWriter != null : "Buffered Writer is Null";
+                bufferedWriter.close();
+            }
+        } else {
+            throw new FileNotFoundException("File does not exist.");
         }
     }
 

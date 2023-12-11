@@ -30,6 +30,8 @@ public class restaurantEditor extends JDialog {
     private JLabel LocationErrorLabel;
     private JLabel RatingErrorLabel;
 
+
+
     public restaurantEditor() {
         setContentPane(contentPane);
         setModal(true);
