@@ -9,11 +9,14 @@ public class RestaurantBlog extends JFrame{
     private JButton loadListButton;
     private JLabel NNN;
     private JButton randomizerButton;
-    private boolean dataLoaded = false;
 
-    public void setDataLoaded(boolean dataLoaded) {
-        this.dataLoaded = dataLoaded;
+    public void setDataSaved(boolean dataSaved) {
+        this.dataSaved = dataSaved;
     }
+
+    private boolean dataSaved = true;
+
+
 
     public JList getRestaurantList() {
         return RestaurantList;
@@ -32,23 +35,27 @@ public class RestaurantBlog extends JFrame{
 
         saveListButton.addActionListener(e -> {
             try{
-                if (!dataLoaded) {
-                    Main.loadDataToFile();
-                    dataLoaded = true;
-                }
                 Main.saveDataToFile();
+                dataSaved = true;
             } catch (IOException ie) {
                 ie.printStackTrace();
             }
-            dataLoaded = true;
         });
 
         loadListButton.addActionListener(e -> {
             try {
-                if(!dataLoaded){
-                    Main.loadDataToFile();
-                    dataLoaded = true;
+                if(!dataSaved){
+                    switch (JOptionPane.showConfirmDialog(this, "Your progress has not been saved. Any unsaved progress will be lost. Would you like to save?")) {
+                        case JOptionPane.OK_OPTION:
+                            Main.saveDataToFile();
+                            dataSaved = true;
+                        case JOptionPane.NO_OPTION:
+                        case JOptionPane.CANCEL_OPTION:
+                            break;
+                    }
                 }
+
+                Main.loadDataToFile();
             } catch (IOException ie) {
                 ie.printStackTrace();
 
