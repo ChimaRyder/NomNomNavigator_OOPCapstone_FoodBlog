@@ -4,6 +4,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Objects;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
@@ -36,8 +37,20 @@ public class Main {
         getInstance().setDataSaved(false);
     }
 
-    public static void removeRestaurant(List) {
 
+    public static void removeRestaurant(String removeRes) {
+//            String removeRes = null;
+        for(restaurant r : restaurants){
+            if(r.getName().equals(removeRes)){
+                System.out.println(r);
+                int ind = restaurants.indexOf(r);
+                restaurants.remove(r);
+                Titles.remove(ind);
+                getInstance().getRestaurantList().setModel(Titles);
+                getInstance().setDataSaved(false);
+                break;
+            }
+        }
     }
 
 //    public Main() {
@@ -206,7 +219,7 @@ public class Main {
         Titles = new DefaultListModel<>();
 
         rb.setContentPane(rb.mainPanel);
-        rb.setSize(500,500);
+        rb.setSize(1500,980);
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
         rb.setTitle("Restaurant Blog");

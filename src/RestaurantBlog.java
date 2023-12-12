@@ -71,6 +71,10 @@ public class RestaurantBlog extends JFrame{
 
             RestaurantViewer rv = new RestaurantViewer();
 
+            if (r == null) {
+                rv.dispose();
+                return;
+            }
             rv.getRestaurantName().setText(r.getName());
             rv.getLocationData().setText(r.getLocation());
             rv.getRating().setText(r.starRating());

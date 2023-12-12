@@ -39,6 +39,10 @@ public class restaurant {
         this.rating = rating;
     }
 
+    public restaurant() {
+        cuisineTags = new ArrayList<>();
+    }
+
     public restaurant(String name, String location, ArrayList<String> cuisineTags, int rating) {
         this.name = name;
         this.location = location;
