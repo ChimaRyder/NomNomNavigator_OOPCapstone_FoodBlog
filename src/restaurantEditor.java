@@ -7,7 +7,7 @@ public class restaurantEditor extends JDialog {
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField restaurantName;
-    private JTextField LocationData;
+
     private JRadioButton rb1;
     private JRadioButton rb2;
     private JRadioButton rb3;
@@ -29,7 +29,7 @@ public class restaurantEditor extends JDialog {
     private JLabel NameErrorLabel;
     private JLabel LocationErrorLabel;
     private JLabel RatingErrorLabel;
-
+    private JComboBox cbLocation;
 
 
     public restaurantEditor() {
@@ -39,7 +39,7 @@ public class restaurantEditor extends JDialog {
         NameErrorLabel.setVisible(false);
         LocationErrorLabel.setVisible(false);
         RatingErrorLabel.setVisible(false);
-
+        String selectedLocation = (String) cbLocation.getSelectedItem();
         buttonOK.addActionListener(e -> {
             boolean restaurantConfirmed = false;
 
@@ -50,7 +50,7 @@ public class restaurantEditor extends JDialog {
                 }
                 NameErrorLabel.setVisible(false);
 
-                if (LocationData.getText().isBlank()){
+                if ( cbLocation.getSelectedIndex()== 0){
                     LocationErrorLabel.setVisible(true);
                     throw new IllegalArgumentException("Error: Restaurant must have a location.");
                 }
@@ -112,26 +112,36 @@ public class restaurantEditor extends JDialog {
         Checkboxes.add(cakesCheckBox);
         Checkboxes.add(friesCheckBox);
 
-      for(JCheckBox c : Checkboxes){
-          if(c.isSelected()){
-             List.add( c.getText());
-          }
-      }
+        for (JCheckBox c : Checkboxes) {
+            if (c.isSelected()) {
+                List.add(c.getText());
+            }
+        }
         int rating = 0;
 
         if (rb1.isSelected()) {
             rating = 1;
-        } else if (rb2.isSelected()) {
+        }
+        if (rb2.isSelected()) {
             rating = 2;
-        } else if (rb3.isSelected()) {
+        }
+        if (rb3.isSelected()) {
             rating = 3;
-        } else if (rb4.isSelected()) {
+        }
+        if (rb4.isSelected()) {
             rating = 4;
-        } else if (rb5.isSelected()){
+        }
+        if (rb5.isSelected()) {
             rating = 5;
         }
 
-        restaurant rest = new restaurant(restaurantName.getText(), LocationData.getText(), List, rating);
+        String selectedLocation = null;
+        if (cbLocation.getSelectedIndex() != 0) {
+            selectedLocation = (String) cbLocation.getSelectedItem();
+        }
+
+
+        restaurant rest = new restaurant(restaurantName.getText(), selectedLocation, List, rating);
         Main.addRestaurant(rest);
         dispose();
     }

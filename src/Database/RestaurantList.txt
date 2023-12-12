@@ -1,21 +1,21 @@
 Alberto's Pizza|Punta Princesa|5|Fast-Food Pizza 
-Sbarro's|SM Seaside|4|Fast-Food Pizza 
-Pizza Hut|SM Seaside|4|Fast-Food Pizza 
+Sbarro's|Mambaling|4|Fast-Food Pizza
+Pizza Hut|Mambaling|4|Fast-Food Pizza
 Greenwich|Raintree|4|Fast-Food Pizza 
-S&R New York Style Pizza|Ayala Center|4|Fast-Food Pizza 
+S&R New York Style Pizza|Luz|4|Fast-Food Pizza
 Angel's Pizza|V Rama|4|Fast-Food Pizza 
 808 Pizza Station|Osmeña Boulevard|3|Fast-Food Pizza 
 Calda Pizza|Mango Avenue|4|Fast-Food Pizza 
 Biaños Pizza|Basak|2|Fast-Food Pizza 
 Popcha Milktea Station|Shell Tisa|4|Milktea 
 Golden Sugar|Capitol Site|3|Milktea 
-Quickly|SM Seaside|4|Milktea 
+Quickly|Mambaling|4|Milktea
 Vasso |Tisa|4|Milktea 
 Sebu Cha Cafe|F Llama Street|3|Milktea 
 Tamp Cafe & Co.|R Arcenas Street|4|Milktea 
 Lolli Milktea & Candy|Tisa|3|Milktea 
 Chatime|IT Park|4|Milktea 
-Burger King|SM Seaside|5|Burger Coffee Fries 
+Burger King|Mambaling|5|Burger Coffee Fries
 Army Navy|IT Park|4|Fast-Food Burger Coffee Fries 
 Zark's Burgers|Ayala Cebu|4|Fast-Food Burger Fries 
 Big Daddy|Il Corso|4|Fast-Food Burger Fries 

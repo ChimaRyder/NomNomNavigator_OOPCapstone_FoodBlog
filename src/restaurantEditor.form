@@ -36,6 +36,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-4709375"/>
                   <text value="OK"/>
                 </properties>
               </component>
@@ -44,6 +45,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-4709375"/>
                   <text value="Cancel"/>
                 </properties>
               </component>
@@ -117,16 +119,6 @@
                       <font name="Franklin Gothic Medium"/>
                       <foreground color="-5700599"/>
                       <text value="Location:"/>
-                    </properties>
-                  </component>
-                  <component id="342e5" class="javax.swing.JTextField" binding="LocationData">
-                    <constraints>
-                      <grid row="2" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-1723335"/>
                     </properties>
                   </component>
                   <component id="2de16" class="javax.swing.JLabel">
@@ -240,6 +232,84 @@
                       <text value="*Restaurant must be rated"/>
                     </properties>
                   </component>
+                  <component id="f085b" class="javax.swing.JComboBox" binding="cbLocation">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1723335"/>
+                      <model>
+                        <item value="Select Location"/>
+                        <item value="Adlaon"/>
+                        <item value="Agsungot"/>
+                        <item value="Apas"/>
+                        <item value="Babag"/>
+                        <item value="Bacayan"/>
+                        <item value="Banilad"/>
+                        <item value="Basak Pardo"/>
+                        <item value="Basak San Nicolas"/>
+                        <item value="Basak-San Nicolas"/>
+                        <item value="Binaliw"/>
+                        <item value="Bonbon"/>
+                        <item value="Budlaan"/>
+                        <item value="Buot"/>
+                        <item value="Busay"/>
+                        <item value="Calamba"/>
+                        <item value="Cambinocot"/>
+                        <item value="Capitol Site"/>
+                        <item value="Carreta"/>
+                        <item value="Cogon Pardo"/>
+                        <item value="Camputhaw"/>
+                        <item value="Day-as"/>
+                        <item value="Duljo-Fatima"/>
+                        <item value="Ermita"/>
+                        <item value="Guadalupe"/>
+                        <item value="Guba"/>
+                        <item value="Hipodromo"/>
+                        <item value="Inayawan"/>
+                        <item value="Kalubihan"/>
+                        <item value="Kamagayan"/>
+                        <item value="Kamputhaw"/>
+                        <item value="Kasambagan"/>
+                        <item value="Kinasang-an"/>
+                        <item value="Lahug"/>
+                        <item value="Lorega San Miguel"/>
+                        <item value="Labangon"/>
+                        <item value="Mabini"/>
+                        <item value="Mabolo"/>
+                        <item value="Malubog"/>
+                        <item value="Pahina Central"/>
+                        <item value="Pardo"/>
+                        <item value="Parian"/>
+                        <item value="Pasil"/>
+                        <item value="Pung-ol Sibugay"/>
+                        <item value="Punta Princesa"/>
+                        <item value="Quiot"/>
+                        <item value="Sambag 1"/>
+                        <item value="Sambag 2"/>
+                        <item value="San Antonio"/>
+                        <item value="San Jose"/>
+                        <item value="San Nicolas Proper"/>
+                        <item value="San Roque"/>
+                        <item value="San Vicente"/>
+                        <item value="Santa Cruz"/>
+                        <item value="Santo Niño"/>
+                        <item value="Sawang Calero"/>
+                        <item value="Sirao"/>
+                        <item value="Suba"/>
+                        <item value="Sudlon 1"/>
+                        <item value="Sudlon 2"/>
+                        <item value="Tabunan"/>
+                        <item value="Tagbao"/>
+                        <item value="Talamban"/>
+                        <item value="Taptap"/>
+                        <item value="Tejero"/>
+                        <item value="Tinago"/>
+                        <item value="Tupas"/>
+                        <item value="Tisa"/>
+                      </model>
+                    </properties>
+                  </component>
                 </children>
               </grid>
               <vspacer id="66c24">
@@ -264,7 +334,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Fast Food"/>
                 </properties>
               </component>
@@ -273,7 +343,7 @@
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Seafood"/>
                 </properties>
               </component>
@@ -282,7 +352,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Salads"/>
                 </properties>
               </component>
@@ -291,7 +361,7 @@
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Pizza"/>
                 </properties>
               </component>
@@ -300,7 +370,7 @@
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Burger"/>
                 </properties>
               </component>
@@ -309,7 +379,7 @@
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Fries"/>
                 </properties>
               </component>
@@ -318,7 +388,7 @@
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Cakes"/>
                 </properties>
               </component>
@@ -327,7 +397,7 @@
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Ice Cream"/>
                 </properties>
               </component>
@@ -336,7 +406,7 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Coffee"/>
                 </properties>
               </component>
@@ -345,7 +415,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-5700599"/>
+                  <background color="-1723335"/>
                   <text value="Milktea"/>
                 </properties>
               </component>

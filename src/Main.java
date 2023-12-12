@@ -34,7 +34,7 @@ public class Main {
         restaurants.add(e);
         Titles.addElement(e.toString());
         getInstance().getRestaurantList().setModel(Titles);
-        getInstance().setDataSaved(false);
+        getInstance().setDataLoaded(false);
     }
 
 
@@ -47,7 +47,7 @@ public class Main {
                 restaurants.remove(r);
                 Titles.remove(ind);
                 getInstance().getRestaurantList().setModel(Titles);
-                getInstance().setDataSaved(false);
+                getInstance().setDataLoaded(false);
                 break;
             }
         }
