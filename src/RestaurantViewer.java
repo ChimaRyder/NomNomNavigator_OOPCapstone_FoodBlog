@@ -75,42 +75,52 @@ public class RestaurantViewer extends JDialog {
     }
 
     public void setPizzaCheckBox(JCheckBox pizzaCheckBox) {
+
         this.pizzaCheckBox = pizzaCheckBox;
     }
 
     public JCheckBox getBurgerCheckBox() {
+
         return burgerCheckBox;
     }
 
     public void setBurgerCheckBox(JCheckBox burgerCheckBox) {
+
         this.burgerCheckBox = burgerCheckBox;
     }
 
     public JCheckBox getFriesCheckBox() {
+
         return friesCheckBox;
     }
 
     public void setFriesCheckBox(JCheckBox friesCheckBox) {
+
         this.friesCheckBox = friesCheckBox;
     }
 
     public JCheckBox getCakesCheckBox() {
+
         return cakesCheckBox;
     }
 
     public void setCakesCheckBox(JCheckBox cakesCheckBox) {
+
         this.cakesCheckBox = cakesCheckBox;
     }
 
     public JCheckBox getIceCreamCheckBox() {
+
         return iceCreamCheckBox;
     }
 
     public void setIceCreamCheckBox(JCheckBox iceCreamCheckBox) {
+
         this.iceCreamCheckBox = iceCreamCheckBox;
     }
 
     public JCheckBox getCoffeeCheckBox() {
+
         return coffeeCheckBox;
     }
 
@@ -119,18 +129,22 @@ public class RestaurantViewer extends JDialog {
     }
 
     public JCheckBox getMilkteaCheckBox() {
+
         return milkteaCheckBox;
     }
 
     public void setMilkteaCheckBox(JCheckBox milkteaCheckBox) {
+
         this.milkteaCheckBox = milkteaCheckBox;
     }
 
     public JLabel getRating() {
+
         return Rating;
     }
 
     public void setRating(JLabel rating) {
+
         Rating = rating;
     }
 

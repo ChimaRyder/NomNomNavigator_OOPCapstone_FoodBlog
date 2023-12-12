@@ -11,6 +11,7 @@ public class RestaurantBlog extends JFrame{
     private JList RestaurantList;
     private JButton saveListButton;
     private JButton loadListButton;
+    private JLabel NNN;
     private boolean dataLoaded = false;
 
     public JList getRestaurantList() {
@@ -19,11 +20,15 @@ public class RestaurantBlog extends JFrame{
 
     public RestaurantBlog() {
 
+        ImageIcon backgroundImage = new ImageIcon("1.png");
+        Image backgroundImage = backgroundImageIcon.getImage().getScaledInstance()
+
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
             re.setSize(400, 300);
             re.setVisible(true);
         });
+
         saveListButton.addActionListener(e -> {
             try{
                 if (!dataLoaded) {
@@ -35,6 +40,7 @@ public class RestaurantBlog extends JFrame{
                 ie.printStackTrace();
             }
         });
+
         loadListButton.addActionListener(e -> {
             try {
                 if(!dataLoaded){
@@ -46,6 +52,7 @@ public class RestaurantBlog extends JFrame{
             }
             dataLoaded = true;
         });
+
         RestaurantList.addListSelectionListener(e -> {
             restaurant r = null;
             for (restaurant res : Main.getRestaurants()) {
