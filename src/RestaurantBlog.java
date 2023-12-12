@@ -9,14 +9,12 @@ public class RestaurantBlog extends JFrame{
     private JButton loadListButton;
     private JLabel NNN;
     private JButton randomizerButton;
+    private boolean dataSaved = true;
+
 
     public void setDataSaved(boolean dataSaved) {
         this.dataSaved = dataSaved;
     }
-
-    private boolean dataSaved = true;
-
-
 
     public JList getRestaurantList() {
         return RestaurantList;
