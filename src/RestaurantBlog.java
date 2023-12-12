@@ -58,6 +58,7 @@ public class RestaurantBlog extends JFrame{
                 Main.loadDataToFile();
             } catch (IOException ie) {
                 ie.printStackTrace();
+
             }
         });
 
