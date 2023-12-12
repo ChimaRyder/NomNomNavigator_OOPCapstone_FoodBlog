@@ -40,8 +40,8 @@ public class Main {
 
     public static void removeRestaurant(String removeRes) {
 //            String removeRes = null;
-        for(restaurant r : restaurants){
-            if(r.getName().equals(removeRes)){
+        for (restaurant r : restaurants) {
+            if (r.getName().equals(removeRes)) {
                 System.out.println(r);
                 int ind = restaurants.indexOf(r);
                 restaurants.remove(r);
