@@ -12,7 +12,11 @@ public class RestaurantBlog extends JFrame{
     private JButton saveListButton;
     private JButton loadListButton;
     private JLabel NNN;
-    private boolean dataLoaded = false;
+    private boolean dataSaved = true;
+
+    public void setDataSaved(boolean dataSaved) {
+        this.dataSaved = dataSaved;
+    }
 
     public JList getRestaurantList() {
         return RestaurantList;
@@ -20,8 +24,8 @@ public class RestaurantBlog extends JFrame{
 
     public RestaurantBlog() {
 
-        ImageIcon backgroundImage = new ImageIcon("1.png");
-        Image backgroundImage = backgroundImageIcon.getImage().getScaledInstance()
+//        ImageIcon backgroundImage = new ImageIcon("1.png");
+//        Image backgroundImage = backgroundImageIcon.getImage().getScaledInstance();
 
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
@@ -31,11 +35,8 @@ public class RestaurantBlog extends JFrame{
 
         saveListButton.addActionListener(e -> {
             try{
-                if (!dataLoaded) {
-                    Main.loadDataToFile();
-                    dataLoaded = true;
-                }
                 Main.saveDataToFile();
+                dataSaved = true;
             } catch (IOException ie) {
                 ie.printStackTrace();
             }
@@ -43,14 +44,21 @@ public class RestaurantBlog extends JFrame{
 
         loadListButton.addActionListener(e -> {
             try {
-                if(!dataLoaded){
-                    Main.loadDataToFile();
-                    dataLoaded = true;
+                if(!dataSaved){
+                    switch (JOptionPane.showConfirmDialog(this, "Your progress has not been saved. Any unsaved progress will be lost. Would you like to save?")) {
+                        case JOptionPane.OK_OPTION:
+                            Main.saveDataToFile();
+                            dataSaved = true;
+                        case JOptionPane.NO_OPTION:
+                        case JOptionPane.CANCEL_OPTION:
+                            break;
+                    }
                 }
+
+                Main.loadDataToFile();
             } catch (IOException ie) {
                 ie.printStackTrace();
             }
-            dataLoaded = true;
         });
 
         RestaurantList.addListSelectionListener(e -> {

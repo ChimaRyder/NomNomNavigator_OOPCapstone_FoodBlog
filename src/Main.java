@@ -32,12 +32,17 @@ public class Main {
     public static void addRestaurant(restaurant e) {
         restaurants.add(e);
         Titles.addElement(e.toString());
-        getInstance().getRestaurantList().setModel(Titles); //
+        getInstance().getRestaurantList().setModel(Titles);
+        getInstance().setDataSaved(false);
     }
 
-    public Main() {
+    public static void removeRestaurant(List) {
 
     }
+
+//    public Main() {
+//
+//    }
     //singleton pattern here
     public static RestaurantBlog getInstance() {
         if (instance == null) {
