@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class RestaurantViewer extends JDialog {
@@ -151,7 +152,7 @@ public class RestaurantViewer extends JDialog {
     public RestaurantViewer() {
         setContentPane(contentPane);
         setModal(true);
-
+        centerDialog();
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
@@ -180,6 +181,14 @@ public class RestaurantViewer extends JDialog {
         dispose();
     }
 
+    private void centerDialog() {
+        GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
+        Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
+        int x = bounds.x + (bounds.width - getWidth()) / 4;
+        int y = bounds.y + (bounds.height - getHeight()) / 4;
+        setLocation(x, y);
+    }
     public static void main(String[] args) {
         RestaurantViewer dialog = new RestaurantViewer();
         dialog.pack();
