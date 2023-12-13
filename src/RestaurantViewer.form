@@ -52,7 +52,9 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-4677228"/>
+        </properties>
         <border type="none"/>
         <children>
           <tabbedpane id="a0cdf" binding="Tabs">
@@ -62,7 +64,7 @@
               </grid>
             </constraints>
             <properties>
-              <background color="-4677228"/>
+              <background color="-1186356"/>
               <font name="Franklin Gothic Demi Cond" size="22"/>
               <foreground color="-5700599"/>
             </properties>
@@ -115,6 +117,7 @@
                         <properties>
                           <background color="-1723335"/>
                           <editable value="false"/>
+                          <font name="Franklin Gothic Medium" size="18"/>
                         </properties>
                       </component>
                       <component id="4f9ee" class="javax.swing.JLabel">
