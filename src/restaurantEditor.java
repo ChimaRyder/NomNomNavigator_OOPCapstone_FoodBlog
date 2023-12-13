@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
@@ -40,6 +41,7 @@ public class restaurantEditor extends JDialog {
         LocationErrorLabel.setVisible(false);
         RatingErrorLabel.setVisible(false);
         String selectedLocation = (String) cbLocation.getSelectedItem();
+        centerDialog();
         buttonOK.addActionListener(e -> {
             boolean restaurantConfirmed = false;
 
@@ -150,13 +152,20 @@ public class restaurantEditor extends JDialog {
         // add your code here
         dispose();
     }
-
-
-
+    private void centerDialog() {
+        GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
+        Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
+        int x = bounds.x + (bounds.width - getWidth()) / 3;
+        int y = bounds.y + (bounds.height - getHeight()) / 3;
+        setLocation(x, y);
+    }
     public static void main(String[] args) {
         restaurantEditor dialog = new restaurantEditor();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+
+
     }
 }

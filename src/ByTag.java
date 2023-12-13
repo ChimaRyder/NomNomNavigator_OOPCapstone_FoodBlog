@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -15,7 +16,7 @@ public class ByTag extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-
+        centerDialog();
         generateBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -46,7 +47,14 @@ public class ByTag extends JDialog {
             }
         });
     }
-
+    private void centerDialog() {
+        GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
+        Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
+        int x = bounds.x + (bounds.width - getWidth()) / 3;
+        int y = bounds.y + (bounds.height - getHeight()) / 3;
+        setLocation(x, y);
+    }
     public static void main(String[] args) {
         ByTag dialog = new ByTag();
         dialog.pack();

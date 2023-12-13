@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
 
 public class ByLocation extends JDialog {
@@ -11,7 +12,7 @@ public class ByLocation extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-
+        centerDialog();
 
         generateButton.addActionListener(e->{
             String selectedLoc = (String) locationCB.getSelectedItem();
@@ -34,7 +35,14 @@ public class ByLocation extends JDialog {
         });
 
     }
-
+    private void centerDialog() {
+        GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
+        Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
+        int x = bounds.x + (bounds.width - getWidth()) / 3;
+        int y = bounds.y + (bounds.height - getHeight()) / 3;
+        setLocation(x, y);
+    }
     public static void main(String[] args) {
         ByLocation dialog = new ByLocation();
         dialog.pack();

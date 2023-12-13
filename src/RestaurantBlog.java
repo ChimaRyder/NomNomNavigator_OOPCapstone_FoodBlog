@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 
 public class RestaurantBlog extends JFrame{
@@ -99,10 +100,17 @@ public class RestaurantBlog extends JFrame{
         RestaurantBlog rb = new RestaurantBlog();
 
         rb.setContentPane(rb.mainPanel);
-        rb.setSize(500,1000);
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
         rb.setTitle("Restaurant Blog");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        rb.setSize(screenSize.width, screenSize.height);
+        rb.setLocationRelativeTo(null);
+        rb.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        rb.setUndecorated(true);
+
+
 
     }
 }

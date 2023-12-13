@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class randomizer extends JDialog {
     private JPanel contentPane;
@@ -13,6 +14,7 @@ public class randomizer extends JDialog {
         getRootPane().setDefaultButton(buttonOK);
 
 
+        centerDialog();
         byTagButton.addActionListener(e->{
             ByTag tag = new ByTag();
             tag.setSize(500,300);
@@ -29,13 +31,24 @@ public class randomizer extends JDialog {
 
         });
 
+
     }
 
+    private void centerDialog() {
+        GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
+        Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
+        int x = bounds.x + (bounds.width - getWidth()) / 3;
+        int y = bounds.y + (bounds.height - getHeight()) / 3;
+        setLocation(x, y);
+    }
     public static void main(String[] args) {
         randomizer dialog = new randomizer();
         dialog.pack();
         dialog.setVisible(true);
         dialog.setSize(500,100);
         System.exit(0);
+
     }
+
 }
