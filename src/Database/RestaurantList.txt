@@ -1,36 +1,74 @@
-Alberto's Pizza|Punta Princesa|5|Fast-Food Pizza 
-Sbarro's|Mambaling|4|Fast-Food Pizza
-Pizza Hut|Mambaling|4|Fast-Food Pizza
-Greenwich|Raintree|4|Fast-Food Pizza 
-S&R New York Style Pizza|Luz|4|Fast-Food Pizza
-Angel's Pizza|V Rama|4|Fast-Food Pizza 
-808 Pizza Station|Osmeña Boulevard|3|Fast-Food Pizza 
-Calda Pizza|Mango Avenue|4|Fast-Food Pizza 
-Biaños Pizza|Basak|2|Fast-Food Pizza 
-Popcha Milktea Station|Shell Tisa|4|Milktea 
-Golden Sugar|Capitol Site|3|Milktea 
-Quickly|Mambaling|4|Milktea
-Vasso |Tisa|4|Milktea 
-Sebu Cha Cafe|F Llama Street|3|Milktea 
-Tamp Cafe & Co.|R Arcenas Street|4|Milktea 
-Lolli Milktea & Candy|Tisa|3|Milktea 
-Chatime|IT Park|4|Milktea 
-Burger King|Mambaling|5|Burger Coffee Fries
-Army Navy|IT Park|4|Fast-Food Burger Coffee Fries 
-Zark's Burgers|Ayala Cebu|4|Fast-Food Burger Fries 
-Big Daddy|Il Corso|4|Fast-Food Burger Fries 
-Bang Bang Special Crispy Bangus|Labangon|4|Seafood 
-Kusina Ni Nasing|Guadalupe|4|Seafood 
-I Love Bucket Shrimps|Tisa|4|Seafood 
-Urbanica Milk Coffee|Capitol |4|Coffee 
-Starbucks|Ayala Central Bloc|5|Coffee 
-Bo's Coffee|Banawa|4|Coffee 
-Red Ribbon|Gaisano Tisa|4|Cakes 
-Goldilocks |Robinsons Fuente|4|Cakes 
-Dairy Queen|SM City Cebu|5|Ice-Cream Cakes 
-Purple Yam Cebu|Punta Princesa|4|Cakes 
-Soy & Bean |Sanciangko Street|4|Ice-Cream 
-Gelatissimo|Ayala Center|5|Ice-Cream Cakes 
-Dessert Factory|Parkmall|4|Ice-Cream Cakes 
-Moonsky & Sunny |Guadalupe|5|Ice-Cream 
-Selecta Ice Cream|Capitol Site|4|Ice-Cream 
+Red Ribbon|Gaisano Tisa|4|Cakes
+Sbarro's|SM Seaside|4|Fast-Food Pizza
+Alberto's Pizza|Punta Princesa|5|Fast-Food Pizza
+Pizza Hut|SM Seaside|4|Fast-Food Pizza
+Greenwich|Raintree|4|Fast-Food Pizza
+Urbanica Milk Coffee|Capitol|4|Coffee
+S&R New York Style Pizza|SM City Cebu|4|Fast-Food Pizza Fries
+Angel's Pizza|V Rama|4|Fast-Food Pizza
+Starbucks|Ayala Central Bloc|5|Coffee
+Burger King|SM Seaside|4|Burger Coffee Fries
+Popcha Milktea Station|Shell Tisa|4|Milktea
+Golden Sugar|Capitol Site|3|Milktea
+Quickly|SM Seaside|4|Milktea
+Vasso|Tisa|4|Milktea
+Sebu Cha Cafe|F Llama Street|3|Milktea
+Tamp Cafe & Co.|R Arcenas Street|4|Milktea
+Lolli Milktea & Candy|Tisa|3|Milktea
+Chatime|SM Seaside|4|Milktea
+Angel's Burger|Adlaon|2|Burger
+Red Ribbon|Agsungot|3|Cakes
+Goldilocks|Apas|4|Cakes
+Greenwich|Babag|4|Pizza
+Lolli Milktea & Candy|Bacayan|2|Milktea
+Chatime|Banilad|2|Milktea
+Quickly|Basak Pardo|3|Milktea
+Golden Sugar|Basak San Nicolas|5|Milktea
+Vaso|Basak-San Nicolas|4|Milktea
+Pizza Hut|Banaliw|2|Pizza
+Sbarro's|BonBon|3|Fast-Food Pizza
+Starbucks|Budlaan|4|Coffee
+Bo's Coffee|Buot|5|Coffee
+Coffee Lagoon|Busay|4|Coffee
+Burger King|Calamba|3|Burger
+Alberto's Pizza|Cambinocot|2|Pizza
+Dimsum Break|Capitol Site|3|Fast-Food
+Jollibee|Carreta|1|Fast-Food
+Mcdonals|Cogon Pardo|2|Fast-Food
+Chowking|Camputhaw|3|Fast-Food
+Manila FoodShoppe|Day-as|4|Fast-Food
+Goldilocks|Duljo-Fatima|4|Cakes
+Andok's|Ermita|5|Fast-Food
+KFC|Guadalupe|1|Fast-Food
+Mang Inasal|Guba|2|Fast-Food
+Tokyo Tokyo|Hipodromo|3|Fast-Food
+Max's|Inayawan|3|Pizza
+Potato Corner|Kalubihan|2|Fast-Food Pizza Fries
+Yellow Cab Pizza|Kamagayan|1|Pizza
+Tropical Hut|Kamputhaw|2|Pizza
+Black Scoop|Kasambagan|3|Coffee
+Shakey's|Kinasang-an|4|Pizza
+Gerry's Grill|Lahug|5|Fast-Food
+Figaro Coffee|Lorega San Miguel|1|Coffee
+Chooks-To-Go|Labangon|3|Fast-Food
+Cabalen|Mabini|4|Burger
+Bacolod Chicken Inasal|Mabolo|5|Fast-Food
+Dencio's|Malubog|2|Fast-Food
+Wendy's|Pahina Central|1|Fast-Food
+PopEye|Pardo|2|Burger
+Pancake House|Parian|3|Cakes
+Gongcha|Pasil|5|Milktea
+Zagu|Pung-ol Sibugay|2|Milktea
+Bubble Tea Station|Punta Princessa|1|Milktea
+Army Navy|Quiot|5|Fast-Food
+Subway|Sambag 1|3|Burger
+BonChon Chicken|Sambag 2|4|Fast-Food
+Tater's Midtown|San Antonio|5|Fast-Food
+Makchang|San Jose|2|Fast-Food
+Barbara's|San Nicolas Proper|4|Fast-Food
+Harbor View|San Roque|3|Fast-Food
+Lan Zhou La Mien|San Vicente|4|Fast-Food
+Illustrado Restaurant|Santa Cruz|4|Pizza
+Wai Ying FastFood|Santo Niño|5|Fast-Food
+Cafe Ilang-Ilang|Sawang Calero|1|Coffee
+Okada|Sirao|1|Milktea
