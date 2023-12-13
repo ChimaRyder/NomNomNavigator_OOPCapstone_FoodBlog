@@ -42,17 +42,23 @@ public class ByTag extends JDialog {
                   ctr++;
               }
 
-                System.out.println(r.toString());
+
+                //System.out.println(r.toString());
+                String res = r.toString();
+                JOptionPane.showMessageDialog(null, res, "Result: ", JOptionPane.INFORMATION_MESSAGE);
+
+
 
             }
+
         });
     }
     private void centerDialog() {
         GraphicsEnvironment center = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice defaultScreen = center.getDefaultScreenDevice();
         Rectangle bounds = defaultScreen.getDefaultConfiguration().getBounds();
-        int x = bounds.x + (bounds.width - getWidth()) / 3;
-        int y = bounds.y + (bounds.height - getHeight()) / 3;
+        int x = bounds.x + (bounds.width - getWidth()) / 4;
+        int y = bounds.y + (bounds.height - getHeight()) / 4;
         setLocation(x, y);
     }
     public static void main(String[] args) {

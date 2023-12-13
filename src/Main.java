@@ -311,7 +311,7 @@ public class Main {
         rb.setLocationRelativeTo(null);
 
         rb.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        rb.setUndecorated(true);
+
 
 
     }

@@ -28,7 +28,7 @@ public class RestaurantBlog extends JFrame{
 
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
-            re.setSize(400, 300);
+            re.setSize(700, 500);
             re.setVisible(true);
         });
 
@@ -63,7 +63,7 @@ public class RestaurantBlog extends JFrame{
 
         randomizerButton.addActionListener(e ->{
            randomizer ran = new randomizer();
-           ran.setSize(500,100);
+           ran.setSize(700,500);
            ran.setVisible(true);
 
         });
@@ -91,7 +91,7 @@ public class RestaurantBlog extends JFrame{
                 rv.getNotesArea().append(s + " ");
             }
 
-            rv.setSize(400, 300);
+            rv.setSize(700, 500);
             rv.setVisible(true);
         });
     }
@@ -100,6 +100,7 @@ public class RestaurantBlog extends JFrame{
         RestaurantBlog rb = new RestaurantBlog();
 
         rb.setContentPane(rb.mainPanel);
+        rb.setSize(500,900);
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
         rb.setTitle("Restaurant Blog");
