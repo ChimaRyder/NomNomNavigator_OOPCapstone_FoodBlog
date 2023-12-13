@@ -125,6 +125,8 @@ public class Main {
             } catch (IOException e) {
                 System.err.println("Error occurred when reading the file");
             }
+
+            restaurants = new ArrayList<>();
             if (!database.isEmpty()) {
 
                 for (String s : database) {
@@ -139,11 +141,15 @@ public class Main {
             }
 
             //update listModel for JList to show the restaurants in file
+            DefaultListModel<String> empty = new DefaultListModel<>();
+            Titles = empty;
+
             if (restaurants != null) {
                 for (restaurant r : restaurants) {
                     Titles.addElement(r.toString());
-                    getInstance().getRestaurantList().setModel(Titles);
                 }
+
+                getInstance().getRestaurantList().setModel(Titles);
             }
         } else {
             throw new FileNotFoundException("File does not exist.");
