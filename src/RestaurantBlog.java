@@ -33,7 +33,7 @@ public class RestaurantBlog extends JFrame{
 
         saveListButton.addActionListener(e -> {
             try{
-                Main.saveDataToFile();
+                Main.loadDataToFile();
                 dataSaved = true;
             } catch (IOException ie) {
                 ie.printStackTrace();
@@ -53,7 +53,7 @@ public class RestaurantBlog extends JFrame{
                     }
                 }
 
-                Main.loadDataToFile();
+                Main.openDataToFile();
             } catch (IOException ie) {
                 ie.printStackTrace();
 
