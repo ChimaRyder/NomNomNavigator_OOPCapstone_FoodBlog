@@ -38,7 +38,7 @@ public class RestaurantBlog extends JFrame{
 
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
-            re.setSize(700, 500);
+            re.setSize(500, 400);
             re.setVisible(true);
         });
 
