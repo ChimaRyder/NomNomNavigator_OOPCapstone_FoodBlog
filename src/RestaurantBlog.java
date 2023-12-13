@@ -30,9 +30,9 @@ public class RestaurantBlog extends JFrame{
 //        Image scaledImage = backgroundImage.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
 //        Icon scaledIcon = new ImageIcon(scaledImage);
 //        JLabel label = new JLabel(scaledIcon);
-//
-//
-//        NNN.setIcon(scaledIcon);
+
+
+   //    NNN.setIcon(scaledIcon);
 
 
 

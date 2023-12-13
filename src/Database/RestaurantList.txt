@@ -46,7 +46,7 @@ Max's|Inayawan|3|Pizza
 Potato Corner|Kalubihan|2|Fast-Food Pizza Fries
 Yellow Cab Pizza|Kamagayan|1|Pizza
 Tropical Hut|Kamputhaw|2|Pizza
-Black Scoop|Kasambagan|3|Coffee
+Black Scoop|Kasambagan|3|Coffee Ice-Cream
 Shakey's|Kinasang-an|4|Pizza
 Gerry's Grill|Lahug|5|Fast-Food
 Figaro Coffee|Lorega San Miguel|1|Coffee
@@ -64,7 +64,7 @@ Army Navy|Quiot|5|Fast-Food
 Subway|Sambag 1|3|Burger
 BonChon Chicken|Sambag 2|4|Fast-Food
 Tater's Midtown|San Antonio|5|Fast-Food
-Makchang|San Jose|2|Fast-Food
+Makchang|San Jose|2|Seafood
 Barbara's|San Nicolas Proper|4|Fast-Food
 Harbor View|San Roque|3|Fast-Food
 Lan Zhou La Mien|San Vicente|4|Fast-Food
@@ -72,3 +72,13 @@ Illustrado Restaurant|Santa Cruz|4|Pizza
 Wai Ying FastFood|Santo Niño|5|Fast-Food
 Cafe Ilang-Ilang|Sawang Calero|1|Coffee
 Okada|Sirao|1|Milktea
+Elle's Salad Bar|Labangon|4|Salads
+Cafe sa Bukid|Luz|4|Salads
+Cool and Normal|Duljo|3|Salads
+Panagatan|Kamputhaw|4|Seafood
+Atecle's Grill|Tisa|4|Seafood
+Little Mermaid|Tisa|4|Seafood
+Gelatisimo|Luz|3|Ice-Cream
+Dairy Queen|Apas|3|Ice-Cream
+Koomi|Luz|2|Ice-Cream
+Buzz|Mambaling|4|Ice-Cream

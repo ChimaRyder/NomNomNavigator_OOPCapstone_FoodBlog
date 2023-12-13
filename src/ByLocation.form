@@ -26,6 +26,7 @@
             </constraints>
             <properties>
               <background color="-1723335"/>
+              <font size="18"/>
               <model>
                 <item value="Select Location"/>
                 <item value="Adlaon"/>
@@ -60,12 +61,14 @@
                 <item value="Kamputhaw"/>
                 <item value="Kasambagan"/>
                 <item value="Kinasang-an"/>
+                <item value="Labangon"/>
                 <item value="Lahug"/>
                 <item value="Lorega San Miguel"/>
-                <item value="Labangon"/>
+                <item value="Luz"/>
                 <item value="Mabini"/>
                 <item value="Mabolo"/>
                 <item value="Malubog"/>
+                <item value="Mambaling"/>
                 <item value="Pahina Central"/>
                 <item value="Pardo"/>
                 <item value="Parian"/>
@@ -103,6 +106,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <font size="18"/>
               <text value="Generate"/>
             </properties>
           </component>

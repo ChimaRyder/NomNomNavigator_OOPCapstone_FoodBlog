@@ -145,6 +145,7 @@
                     </constraints>
                     <properties>
                       <background color="-1723335"/>
+                      <font name="Franklin Gothic Medium" size="20"/>
                       <text value="1"/>
                     </properties>
                   </component>
@@ -154,6 +155,7 @@
                     </constraints>
                     <properties>
                       <background color="-1723335"/>
+                      <font name="Franklin Gothic Medium" size="20"/>
                       <text value="3"/>
                     </properties>
                   </component>
@@ -163,6 +165,7 @@
                     </constraints>
                     <properties>
                       <background color="-1723335"/>
+                      <font name="Franklin Gothic Medium" size="20"/>
                       <text value="5"/>
                     </properties>
                   </component>
@@ -172,6 +175,7 @@
                     </constraints>
                     <properties>
                       <background color="-1723335"/>
+                      <font name="Franklin Gothic Medium" size="20"/>
                       <text value="4"/>
                     </properties>
                   </component>
@@ -181,6 +185,7 @@
                     </constraints>
                     <properties>
                       <background color="-1723335"/>
+                      <font name="Franklin Gothic Medium" size="20"/>
                       <text value="2"/>
                     </properties>
                   </component>
@@ -282,12 +287,14 @@
                         <item value="Kamputhaw"/>
                         <item value="Kasambagan"/>
                         <item value="Kinasang-an"/>
+                        <item value="Labangon"/>
                         <item value="Lahug"/>
                         <item value="Lorega San Miguel"/>
-                        <item value="Labangon"/>
+                        <item value="Luz"/>
                         <item value="Mabini"/>
                         <item value="Mabolo"/>
                         <item value="Malubog"/>
+                        <item value="Mambaling"/>
                         <item value="Pahina Central"/>
                         <item value="Pardo"/>
                         <item value="Parian"/>

@@ -34,7 +34,9 @@ public class ByTag extends JDialog {
                   for (String t : r.getCuisineTags()) {
                       if (t.equals(selectedTag))
                       {
+
                           tag = t;
+                          JOptionPane.showMessageDialog(null, r.toString(), "Result: ", JOptionPane.INFORMATION_MESSAGE);
                           break;
                       }
                   }
@@ -44,8 +46,7 @@ public class ByTag extends JDialog {
 
 
                 //System.out.println(r.toString());
-                String res = r.toString();
-                JOptionPane.showMessageDialog(null, res, "Result: ", JOptionPane.INFORMATION_MESSAGE);
+
 
 
 

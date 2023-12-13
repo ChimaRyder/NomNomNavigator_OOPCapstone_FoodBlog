@@ -30,8 +30,8 @@ public class ByLocation extends JDialog {
                 ctr++;
             }
 
-            String res = r.toString();
-            JOptionPane.showMessageDialog(null, res, "Result: ", JOptionPane.INFORMATION_MESSAGE);
+
+            JOptionPane.showMessageDialog(null, r.toString(), "Result: ", JOptionPane.INFORMATION_MESSAGE);
 
         });
 

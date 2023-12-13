@@ -3,7 +3,7 @@
   <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="48" y="54" width="680" height="297"/>
+      <xy x="48" y="54" width="702" height="297"/>
     </constraints>
     <properties>
       <background color="-4677228"/>
@@ -25,6 +25,8 @@
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-1723335"/>
+              <font size="18"/>
               <text value="By Tag"/>
             </properties>
           </component>
@@ -33,6 +35,8 @@
               <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-1723335"/>
+              <font size="18"/>
               <text value="By Location"/>
             </properties>
           </component>
@@ -81,6 +85,8 @@
               <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-1723335"/>
+              <font size="18"/>
               <text value="Surprise Me"/>
             </properties>
           </component>
