@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -219,16 +220,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         RestaurantBlog rb = getInstance();
         restaurants = new ArrayList<>();
         Titles = new DefaultListModel<>();
 
         rb.setContentPane(rb.mainPanel);
-        rb.setSize(1500,980);
         rb.setDefaultCloseOperation(EXIT_ON_CLOSE);
         rb.setVisible(true);
+
+        rb.setSize(screenSize.width, screenSize.height);
         rb.setTitle("Restaurant Blog");
+
+        rb.setLocationRelativeTo(null);
+
+        rb.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        rb.setUndecorated(true);
 
 
     }
