@@ -23,8 +23,18 @@ public class RestaurantBlog extends JFrame{
 
     public RestaurantBlog() {
 
-//        ImageIcon backgroundImage = new ImageIcon("1.png");
-//        Image backgroundImage = backgroundImageIcon.getImage().getScaledInstance()
+
+
+//        int width = 100;
+//        int height = 100;
+//        Image scaledImage = backgroundImage.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+//        Icon scaledIcon = new ImageIcon(scaledImage);
+//        JLabel label = new JLabel(scaledIcon);
+//
+//
+//        NNN.setIcon(scaledIcon);
+
+
 
         addButton.addActionListener(e -> {
             restaurantEditor re = new restaurantEditor();
