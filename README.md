@@ -1,4 +1,5 @@
-# OOP_Capstone_FoodBlog
+![1](https://github.com/ChimaRyder/OOP_Capstone_FoodBlog/assets/125328585/672a1b18-64f1-4d40-880c-dabc76dd7e7d)
+# NomNom Navigator | OOP Capstone (Food Blog)
 A program that showcases reviewed Restaurants and uses a randomizer to randomly select a restaurant based on preferences.
 ## How It Works
 You can view or delete your reviewed restaurants via the *JList* and utilize the buttons to either create, add, or view your lists or restaurants.
