@@ -25,3 +25,6 @@ You can view or delete your reviewed restaurants via the *JList* and utilize the
 
 ## Implementation
 Applied a *singleton pattern* on the Main class to create a single instance of Restaurant Blog to utilize its non-static components with the global lists and ListModel.
+
+##
+***This project is Capstone Project in partial compliance with CSIT227 - Object-Oriented Programming 1***
